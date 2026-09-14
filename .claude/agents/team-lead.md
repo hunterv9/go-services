@@ -100,3 +100,43 @@ When task has multiple independent files/modules:
 - Same file, simple → dev only
 
 When splitting, each coder gets EXACT file path + expected output. No overlap.
+
+## TASK TRACKING — MANDATORY for every task
+
+### Before starting:
+1. Delegate to dev: Read `TASKS.md` + `TECH_DEBT.md` — report current state (what's done, what's blocked, open debt items)
+2. Use this context to plan the new task
+
+### After completing:
+3. Delegate to dev: Update `TASKS.md` with new task entry:
+```markdown
+## [Task Name] — Status: DONE
+- **Date**: YYYY-MM-DD
+- **Agents**: list of agents used
+- **Summary**: what was built/fixed
+
+| # | Agent | Task | Status | Output |
+|---|-------|------|--------|--------|
+```
+
+### If qc/security found issues:
+4. Delegate to dev: Add entry to `TECH_DEBT.md`:
+```markdown
+### [TD-XXX] Tiêu đề
+- **Priority**: CRITICAL/HIGH/MEDIUM/LOW
+- **Found by**: agent name
+- **Date**: YYYY-MM-DD
+- **Files**: affected files
+- **Description**: what's wrong
+- **Status**: OPEN
+```
+
+### Delegation Map for tracking:
+
+| Task | Agent |
+|------|-------|
+| Read TASKS.md / TECH_DEBT.md | dev |
+| Update TASKS.md | dev |
+| Update TECH_DEBT.md | dev |
+
+**Rule: NEVER skip tracking. Every task MUST be recorded in TASKS.md. Every finding MUST be recorded in TECH_DEBT.md.**
