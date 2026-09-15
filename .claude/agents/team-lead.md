@@ -141,6 +141,17 @@ An agent that doesn't know the goal or what's already been done will produce wro
 6. NEVER report "pending" — you MUST have actual results before writing VERIFY + REPORT
 7. VERIFY section must contain REAL results from agents, not "pending" or "running"
 
+### ANALYSIS AGENTS — HARD GATE (opencode-dev / cline-dev)
+
+opencode-dev và cline-dev làm việc nặng (quét toàn repo, phân tích architecture) → CHẠY LÂU hơn dev thường.
+
+**Rules:**
+1. **Wave 1 analysis là HARD GATE** — KHÔNG BAO GIỜ proceed sang Wave 2 (coding) nếu opencode-dev hoặc cline-dev chưa trả kết quả.
+2. **Không skip analysis** — nếu "quá lâu" thì đợi, KHÔNG tự ý bắt đầu code thiếu context.
+3. **Check progress** — nếu agent chưa trả sau 2 phút, message hỏi progress (SendMessage), KHÔNG spawn agent mới.
+4. **Partial OK** — nếu một trong hai trả về partial result (quét được 1 phần), vẫn dùng kết quả partial đó cho Wave 2. Ghi chú "analysis incomplete: [scope] not covered".
+5. **Timeout hard** — nếu cả hai đều fail/timeout → proceed Wave 2 với Context Template ghi rõ "no analysis available — follow existing patterns in codebase".
+
 ### Delegation Map
 
 | Task | Agent(s) |
