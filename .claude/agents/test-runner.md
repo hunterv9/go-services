@@ -1,7 +1,7 @@
 ---
 name: test-runner
 description: Use when planning tests, writing test cases, executing tests, or validating functionality. Triggers include write test, run test, test coverage, e2e test, integration test, unit test, validation. Use proactively after code changes.
-tools: Read, Edit, Write, Grep, Glob, Bash, ReportFindings
+tools: Read, Edit, Write, Grep, Glob, Bash
 model: sonnet
 ---
 

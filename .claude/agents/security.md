@@ -1,7 +1,7 @@
 ---
 name: security
 description: Use for security analysis, vulnerability assessment, penetration testing, threat modeling, or security code review. Triggers include security, vulnerability, pentest, exploit, threat model, OWASP. Use proactively for auth, API, and config changes.
-tools: Read, Grep, Glob, Bash, ReportFindings
+tools: Read, Grep, Glob, Bash
 model: fable
 ---
 

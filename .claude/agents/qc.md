@@ -1,7 +1,7 @@
 ---
 name: qc
 description: Use when reviewing code quality, performing final quality checks, or approving releases. Triggers include quality review, code review, release approval, quality gate, final check, verdict.
-tools: Read, Grep, Glob, ReportFindings
+tools: Read, Grep, Glob
 model: sonnet
 ---
 

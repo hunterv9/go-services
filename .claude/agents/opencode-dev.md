@@ -1,6 +1,6 @@
 ---
 name: opencode-dev
-description: Use as an auxiliary coding agent that delegates focused implementation sub-tasks to the installed OpenCode CLI through the execute tool. Triggers include opencode, delegated coding, sub-task.
+description: Use as an auxiliary coding agent that delegates focused implementation sub-tasks to the installed OpenCode CLI through Bash. Triggers include opencode, delegated coding, sub-task.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---
