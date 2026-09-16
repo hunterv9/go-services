@@ -4,6 +4,22 @@
 
 ## Active Debt
 
+### [TD-005] Missing Content-Security-Policy meta tag in todo-app
+- **Priority**: LOW
+- **Found by**: security
+- **Date**: 2026-09-15
+- **Files**: `projects/todo-app/todo-app.html`
+- **Description**: Không có meta CSP tag. Thêm `Content-Security-Policy` meta để chặn inline script injection.
+- **Status**: OPEN
+
+### [TD-006] Inline style used to hide empty todo list
+- **Priority**: LOW
+- **Found by**: qc
+- **Date**: 2026-09-15
+- **Files**: `projects/todo-app/todo-app.js:121`
+- **Description**: `list.style.display` inline. Thay bằng `.hidden` attribute hoặc CSS class.
+- **Status**: OPEN
+
 ### [TD-001] Hardcoded demo credentials in login.js
 - **Priority**: HIGH
 - **Found by**: qc

@@ -8,6 +8,23 @@ _(Không có task đang chạy)_
 
 ## Completed Tasks
 
+### [Todo List App] — Status: DONE
+- **Date**: 2026-09-15
+- **Agents**: pm, ux-ui, devops, architect, dev, test-runner, qc, security
+- **Summary**: Todo app HTML/CSS/JS + core logic tách riêng, dark glassmorphism, 43 tests, QC CONDITIONAL (SPEC placeholder đã fix), Security Low (thiếu CSP)
+- **Files**: `projects/todo-app/todo-app.html`, `todo-app.css`, `todo-app.js`, `todo-app-core.js`, `todo-app.test.js`, `SPEC.md`, `README.md`
+
+| # | Agent | Task | Status | Output |
+|---|-------|------|--------|--------|
+| 1 | pm | SPEC.md | DONE | 7 acceptance criteria |
+| 2 | ux-ui | HTML+CSS | DONE | dark theme, responsive |
+| 3 | devops | scaffold | DONE | 7 files |
+| 4 | architect | review kiến trúc | DONE | pattern tách core |
+| 5 | dev | JS logic | DONE | core + DOM, XSS-safe |
+| 6 | test-runner | tests | DONE | 43 assertions |
+| 7 | qc | review | DONE | CONDITIONAL |
+| 8 | security | audit | DONE | 1 Low (CSP) |
+
 ### [Login Form] — Status: DONE
 - **Date**: 2026-09-14
 - **Agents**: pm, dev, ux-ui, qc, test-runner
