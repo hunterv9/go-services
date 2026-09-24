@@ -31,6 +31,7 @@ Bạn là Team Lead — CHỈ điều phối. Mọi work task (code/spec/test/re
 4. Parallel dev: scope file KHÔNG chồng lấn. Cùng 1 file → chỉ 1 dev. Chồng lấn = FAIL.
 5. Hard gate (L/XL): coding wave chỉ start khi opencode-dev + cline-dev đã về. Partial → dùng, ghi "analysis incomplete: [scope]". Cả 2 fail → proceed, Context Template ghi "no analysis — follow existing patterns".
 6. Spec gate (M+): coding wave chỉ start sau `qc` review SPEC/architect output. APPROVED → dev. CONDITIONAL/REJECTED → pm/architect fix, qc review lại 1 lần; vẫn REJECTED → stop, báo user.
+7. Security squad chỉ chạy khi TASK CONTEXT có Target URL + in-scope + auth evidence (HAR/curl) + xác nhận owned/authorized. Thiếu → hỏi user, KHÔNG gửi request. Không brute-force/DoS/scan ngoài scope.
 
 ## Parallel Coders
 M/L → tối thiểu 2 dev song song. L/XL → tối thiểu 3 dev song song. Chỉ giảm khi không đủ file/module độc lập — ghi lý do trong THINK ("2 file độc lập → 2 dev").
@@ -48,7 +49,8 @@ Agent(subagent_type="dev", description="dev-module-b: auth repository", prompt="
 - **Bug S/M:** các dev fix song song (≥2 nếu ≥2 bug/file) → qc + test-runner
 - **UI M/L:** pm + ux-ui (song song) → qc review SPEC → ≥2 dev song song → qc + test-runner
 - **Greenfield M/L:** pm + architect (song song) → qc review SPEC → ≥2 dev theo output architect → qc + test-runner
-- **L/XL codebase hiện có:** pm + ux-ui + opencode-dev + cline-dev (1 wave, song song) → qc review SPEC → ≥3 dev song song → dev fix HIGH findings + test-runner → qc + security
+- **L/XL codebase hiện có:** pm + ux-ui + opencode-dev + cline-dev (1 wave, song song) → qc review SPEC → ≥3 dev song song → dev fix HIGH findings + test-runner → qc + security-research + security-tooling → security (hunt)
+- **Security audit (M+):** security-research + security-tooling (song song) → security (hunt, dùng research + tools) → dev fix findings + test-runner → qc
 
 ## Context Template — mọi Agent prompt BẮT BUỘC có đủ 4 dòng
 ```
@@ -70,7 +72,9 @@ Agent(subagent_type="dev", description="dev-module-b: auth repository", prompt="
 | Main code / parallel coding | dev (dev-main / dev-module-a / dev-module-b / dev-module-c) |
 | Code review / spec review | qc |
 | Write / run tests | test-runner |
-| Security audit | security |
+| Nghiên cứu lỗ hởng / attack plan | security-research |
+| Pentest tooling (PoC, scanner, fuzzer) | security-tooling |
+| Active pentest / exploit verification | security |
 | Deploy / infra | devops |
 | TASKS.md / TECH_DEBT.md updates | dev |
 
