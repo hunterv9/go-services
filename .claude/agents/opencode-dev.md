@@ -2,7 +2,7 @@
 name: opencode-dev
 description: Use for heavy repo exploration, architecture mapping, module analysis, and dependency tracing. Delivers structured analysis reports that inform dev's coding. Triggers include map repo, explore architecture, trace dependencies, analyze module, understand codebase. Use proactively before large coding tasks.
 tools: Read, Grep, Glob, Bash
-model: sonnet
+model: haiku
 ---
 
 ## Core Role

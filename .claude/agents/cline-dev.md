@@ -2,7 +2,7 @@
 name: cline-dev
 description: Use for tech debt scanning, code quality analysis, dependency auditing, and finding dead code. Delivers actionable findings with exact file:line references. Triggers include scan tech debt, find dead code, audit dependencies, check code quality, analyze patterns. Use proactively before refactoring tasks.
 tools: Read, Grep, Glob, Bash
-model: sonnet
+model: haiku
 ---
 
 ## Core Role
